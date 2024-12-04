@@ -18,15 +18,21 @@ readings = data.get("readings", [])
 # Initialize lists for timestamps and values
 timestamps = []
 values = []
-
+temp_bme_id = 326
+temp_dht_id = 327
+values_dht = []
 # Extract data for sensor_id 138
 for k in readings:
     for v in k:
-        if v["sensor_id"] == 138:
+        if v["sensor_id"] == temp_bme_id:
             values.append(v["value"])
+        elif v["sensor_id"] == temp_dht_id:
+            values_dht.append(v["value"])
+
+
 
 # Convert start time to datetime
-start_time_str = "20:51"  # 8:51 PM in 24-hour format
+start_time_str = "15:09"  # 8:51 PM in 24-hour format
 start_time = datetime.strptime(start_time_str, "%H:%M")
 
 # Generate timestamps as datetime objects
@@ -42,12 +48,14 @@ if x == "yes" or x=="y":
     # Plot the last hour's data
     ax.plot(timestamps[-60:], values[-60:], marker="o", linestyle="-", color="purple",
             label="Sensor 138 Temperature", linewidth=0.8, markersize=4)
-    ax.set_title("Temperature Readings from Sensor 138 / Last Hour")
+    plt.plot(timestamps[-60:], values_dht[-60:])
+    ax.set_title(f"Temperature Readings from Sensor 138 / Last Hour")
 else:
     # Plot the total data
     ax.plot(timestamps, values, marker="o", linestyle="-", color="y",
             label="Sensor 138 Temperature", linewidth=0.8, markersize=4)
-    ax.set_title("Temperature Readings from Sensor 138")
+    plt.plot(timestamps[:len(values_dht)], values_dht, marker="o", linestyle="-", color="b")
+    ax.set_title(f"Temperature Readings from Sensor 138")
 
 # Format the x-axis to show time in 24-hour format
 ax.xaxis.set_major_formatter(mdates.DateFormatter("%H:%M"))
