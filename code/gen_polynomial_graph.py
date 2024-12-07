@@ -32,7 +32,7 @@ def gen_polynomial_graph(x: list, y: list, deg: int, window_size: int) -> tuple:
     # Generate the x-values of the polynomial graph
     # by creating a list that has len(x) of evenly spaced values between the x-values starting point (lowest value) and the x-value stopping point (highest value)
     x_graph = np.linspace(min(x), max(x), num=len(x))
-    a
+    
     # Generate the y-values of the polynomial graph
     # by creating a list that has values which are the value of the elements of x_graph inputted into the polynomial
     y_graph = polynomial(x_graph)
