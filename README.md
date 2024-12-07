@@ -50,7 +50,11 @@ TOK Connection: To what extent does the use of data science in climate research 
 # Criteria B: Design
 ![System Diagrams unit 2 (2)](https://github.com/user-attachments/assets/36775cba-6730-45d3-bccb-57b4d8a8179d)
 
-**Fig.3** Fig. 3 System diagram (HL+) for the proposed system to visualize and analyze temperature and humidity data in our campus. Physical variables measured with a network of DHT11/BMP280 sensors locally on a Raspberry Pi. A remote server provides and API for remote monitoring and storage (192.162.6.142) via the ISAK-S network. A laptop for remote work is included.
+**Fig.1** Fig. 1 System diagram (HL+) for the proposed system to visualize and analyze temperature and humidity data in our campus. Physical variables measured with a network of DHT11/BMP280 sensors locally on a Raspberry Pi. A remote server provides and API for remote monitoring and storage (192.162.6.142) via the ISAK-S network. A laptop for remote work is included.
+
+## Flow Charts
+![image](https://github.com/user-attachments/assets/6bf09302-87ef-4376-860f-21444b7c3b35)
+**Fig.2** Fig. 2 Flow Chart for the update_all_sensors() function, this function uploads sensor data to both the server and the local CSV file.
 
 ## Record of Tasks
 | Task No |                              Planned Action                             |                                    Planned Outcome                                    | Time Estimated | Target Completion Date | Criterion |
