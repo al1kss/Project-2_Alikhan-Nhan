@@ -82,7 +82,7 @@ The solution provides a visual representation of the Humidity, Temperature and a
 ## List of techniques used
 1. Classes (
 2. Functions
-3. While Loop
+3. Moving Average
 4. Writing Files Using Python
 5. HTTP Requests
 ## Development
