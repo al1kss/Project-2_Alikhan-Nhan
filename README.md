@@ -92,8 +92,10 @@ The solution provides a visual representation of the Humidity, Temperature and a
 | ADAfruit_SSD1306 |
 | ADAfruit_DHT     |
 | bme280           |
+| datetime         |
 | matplotlib       |
 | numpy            |
+| time             |
 | PIL              |
 
 ## List of techniques used
