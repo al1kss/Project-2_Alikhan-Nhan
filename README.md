@@ -79,12 +79,31 @@ The solution provides a visual representation of the Humidity, Temperature and a
 ## Test Plan
 
 # Criteria C: Development
+## Existing Tools:
+| Software\ Development Tools |
+|-----------------------------|
+| Python                      |
+| PyCharm                     |
+| Raspberry Pi                |
+| ISAK Weather API            |
+
+| Libraries        |
+|------------------|
+| ADAfruit_SSD1306 |
+| ADAfruit_DHT     |
+| bme280           |
+| matplotlib       |
+| numpy            |
+| PIL              |
+
 ## List of techniques used
-1. Classes (
-2. Functions
-3. Moving Average
-4. Writing Files Using Python
-5. HTTP Requests
+1. Classes (Classes allow easy implementation of API requests for both new and existing users by creating different instances)
+2. Functions (Functions allow higher code-readability and allows for the reuse of code)
+3. Moving Average (To smooth the data and provides a more dataset more reflective of the environment)
+4. Polynomial Fit (To provide deeper understand of the data and allows for prediction based on the sensors' data)
+5. Writing Files Using Python (To keep track of the sensor's data and add redundancy to ensure the swiftness of the data-recording process)
+6. HTTP Requests (To keep track of the sensor's data and add redundancy to ensure the swiftness of the data-recording process)
+   
 ## Development
 ### Uploading Data to Server (Success Criteria 5)
 ```.py
