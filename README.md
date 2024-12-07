@@ -27,17 +27,19 @@ Considering the budgetary constrains of the client and the hardware requirements
 [^7]: Real Python. “Python vs C++: Selecting the Right Tool for the Job.” Real Python, Real Python, 19 June 2021, https://realpython.com/python-vs-cpp/#memory-management. 
 The solution provides a visual representation of the Humidity, Temperature and atmospheric pressure values inside a dormitory for a minimum period of 48 hours. As 48 hours is 2 complete day and night cycles, this time period allows for the full recording of both the daily variations and day-to-day variations of these environmental variables. Quote from the problem definition: “recording the data for a period of time sufficient for insights to be made, …  taking as little time as possible.”
 
-The local variables will be measured using a set of 5 sensors around the dormitory. These include 2 temperature sensors, 2 humidity sensors, and 1 pressure sensor. The 2 temperature sensors and humidity sensors account for any possible variation between temperature at the two ends of the mini garden, whereas only 1 pressure sensor was used because the entire mini garden is at the same elevation. The setup ensures that a sufficient amount of data and number of variables can be recorded with the least number of sensors possible. Quote from the problem definition: “as a student, he has a limited budget, and therefore wants this investigation to be as low-cost as possible”
+1. The solution provides a visual representation of the Humidity, Temperature and atmospheric pressure values inside a dormitory for a minimum period of 48 hours. As 48 hours is 2 complete day and night cycles, this time period allows for the full recording of both the daily variations and day-to-day variations of these environmental variables. Quote from the problem definition: “recording the data for a period of time sufficient for insights to be made, …  taking as little time as possible.”
 
-The solution provides a mathematical modelling for the Humidity, temperature and atmospheric pressure levels for each Local and Remote locations. Quote from the problem definition: “understanding the general trend”.
+2. The local variables will be measured using a set of 5 sensors around the dormitory. These include 2 temperature sensors, 2 humidity sensors, and 1 pressure sensor. The 2 temperature sensors and humidity sensors account for any possible variation between temperature at the two ends of the mini garden, whereas only 1 pressure sensor was used because the entire mini garden is at the same elevation. The setup ensures that a sufficient amount of data and number of variables can be recorded with the least number of sensors possible. Quote from the problem definition: “as a student, he has a limited budget, and therefore wants this investigation to be as low-cost as possible”
 
-The solution provides a comparative analysis for the Humidity, Temperature and atmospheric pressure levels for each Local and Remote locations including mean, standard deviation, minimum, maximum, and median. This displays and visualizes the raw data in a way that is understandable to my client, who is not accustomed to computer science and handling data. Quote from the problem definition: “... provide a report on the overall climate of the dormitory.”.
+3. The solution provides a mathematical modelling for the Humidity, temperature and atmospheric pressure levels for each Local and Remote locations. Quote from the problem definition: “understanding the general trend”.
 
-The local samples are stored in a csv file and posted to the remote server as a backup. This is to ensure that during the frequent electricity outage, data will still be saved in non-volatile memory and guarantee that the data collection process happens as swiftly as possible. Quote from the problem definition: “.. taking as little time as possible”.
+4. The solution provides a comparative analysis for the Humidity, Temperature and atmospheric pressure levels for each Local and Remote locations including mean, standard deviation, minimum, maximum, and median. This displays and visualizes the raw data in a way that is understandable to my client, who is not accustomed to computer science and handling data. Quote from the problem definition: “... provide a report on the overall climate of the dormitory.”.
 
-The solution provides a prediction for the subsequent 12 hours for Humidity, temperature, and atmospheric pressure. Extrapolating the data to 12 hours beyond the recordings allows for a visualization of the overall climate of the room. Quote from the problem definition: “The recordings alone would not be persuasive enough to create an overview of the climate of his dorm room.”
+5. The local samples are stored in a csv file and posted to the remote server as a backup. This is to ensure that during the frequent electricity outage, data will still be saved in non-volatile memory and guarantee that the data collection process happens as swiftly as possible. Quote from the problem definition: “.. taking as little time as possible”.
 
-The solution includes a poster summarizing the visual representations, model and analysis created. The poster includes a recommendation about healthy levels for Humidity, Temperature and atmospheric pressure. This presents both the data collected and the conclusion that came from the analysis of that data in a way that can be easily understood by my client, who is not accustomed to computer science. Quote from the problem definition: “... showing him the exact issue of what is happening.”.
+6. The solution provides a prediction for the subsequent 12 hours for Humidity, temperature, and atmospheric pressure. Extrapolating the data to 12 hours beyond the recordings allows for a visualization of the overall climate of the room. Quote from the problem definition: “The recordings alone would not be persuasive enough to create an overview of the climate of his dorm room.”
+
+7. The solution includes a poster summarizing the visual representations, model and analysis created. The poster includes a recommendation about healthy levels for Humidity, Temperature and atmospheric pressure. This presents both the data collected and the conclusion that came from the analysis of that data in a way that can be easily understood by my client, who is not accustomed to computer science. Quote from the problem definition: “... showing him the exact issue of what is happening.”.
 
 
 1. How does our use of technology shape our understanding of the environment
@@ -77,7 +79,45 @@ The solution includes a poster summarizing the visual representations, model and
 ## Test Plan
 
 # Criteria C: Development
-### Polynomial Prediction Generator
+### Uploading Data to Server (5)
+```.py
+# The 3 lines of code below is to check whether or not the user is new
+status = ''
+while status != 'y' and status != 'n':
+    status = input('Are you a new user? (enter only y or n)')
+
+# If the user is new
+if status == 'y':
+    file_created = False
+    j = 0
+    while not file_created: #while the file is not created
+        try: # Try creating the database file numbered j
+            f = open(f'database{j}.csv', mode = 'x')
+            file_created = True
+        except: #  Add 1 to the CSV number if it already exists
+            j += 1
+    with open(f'database{j}', mode = 'a') as f: # add headers to the new csv file
+        f.writelines(['temperature_bme, temperature_dht, humidity_bme, humidity_dht, pressure_bme, time\n'])
+
+    # create an instance of an object that we created that can send requests to ISAK Weather API
+    server = http(server_ip = '192.168.4.137', username = input("What is the username you want to choose?"), password = input("What is the password that you want to use?"), sensor_location = input("Where are the censors located at?"), i = j)
+    server.register() # this method registers the user
+
+    server.get_token() # this method retrieves an authorization token from the API server
+    print(server.create_new_sensor_all_type()) # create new sensors using the username provided and token generated
+else:
+    # create an instance of an object that we created that can send requests to ISAK Weather API using the existing user's credential
+    server = http(server_ip = '192.168.4.137', username = input("What is your username?"), password = input("What is your password?"), i = input('What is your CSV file number?'))
+
+while True:
+    # in an infinite loop
+    server.get_token() # this method retrieves an authorization token from the API server
+    print(server.update_all_censor()) # this method sends a post request to the server to update the sensor's data both on the server and CSV backup
+
+    time.sleep(60) # stop the program for 60 seconds
+```
+    To fulfill criterion 5 and ensure that the data collection process goes as smoothly as possible, the code block above was needed. It describes the main code of our data collection code. It consists of an if statement that checks if the user is a new or returning and do the 
+### Polynomial Prediction Generator (Criterion 3 & 6)
 ```.py
 def gen_polynomial_graph(x: list, y: list, deg: int, window_size: int) -> tuple:
     """
