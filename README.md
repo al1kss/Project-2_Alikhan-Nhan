@@ -80,7 +80,11 @@ The solution provides a visual representation of the Humidity, Temperature and a
 
 # Criteria C: Development
 ## List of techniques used
-
+1. Classes (
+2. Functions
+3. While Loop
+4. Writing Files Using Python
+5. HTTP Requests
 ## Development
 ### Uploading Data to Server (Success Criteria 5)
 ```.py
