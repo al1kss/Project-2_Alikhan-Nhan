@@ -44,10 +44,17 @@ The solution provides a visual representation of the Humidity, Temperature and a
 
 TOK Connection: To what extent does the use of data science in climate research influence our understanding of environmental issues, and what knowledge questions arise regarding the reliability, interpretation, and ethical implications of data-driven approaches in addressing climate change
 
-1. How does our use of technology shape our understanding of the environment
-2. What responsibilities do we have as technologists when it comes to handling personal data related to our living spaces?
-3. What cultural and contextual factors might impact our interpretation of the results, especially when comparing our local readings with those from the campus? 
+1. Technology and Environmental Understanding
+   
+The sensors allowed the research group to gather an enormous amount of data that would be extremely tedious to manually collect to great accuracy. A limitation is that sometimes errors can occur, and the only way to identify this error is to add a reference, such as an additional sensor. Even then, there is a chance that both sensors are incorrect, then it would be up to the human analysis to provide an accurate understanding from the data.
 
+3. Responsibilities in Handling Personal Data
+   
+Personal data needs consent to be shared and handled. However, an important property of digital data is that it can be easily duplicated when shared. Therefore, as we have ethics, it is our responsibility to ensure the safety of the data recorded to honor the consent of the person being recorded.
+
+5. Cultural and Contextual Factors in Data Interpretation
+   
+Cultural and contextual factors greatly influence our interpretation of sensor data. A data recording can be deemed in analysis as an anomoly and wrong recording based on the analyzer's perspective. If one has the prior knowledge and expectation about the data, they might subconsciously have a favor towards certain data values, therefore creating a dataset or conclusion that vastly differs from the truth.
 # Criteria B: Design
 ![System Diagrams unit 2 (2)](https://github.com/user-attachments/assets/36775cba-6730-45d3-bccb-57b4d8a8179d)
 
