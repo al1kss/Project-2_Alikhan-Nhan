@@ -302,4 +302,9 @@ This approach calculates lower and upper bounds for each sensor's measurements b
 
 # Criteria D: Functionality
 
+## Poster
+![image](https://github.com/user-attachments/assets/d77c629a-8b87-43f2-9fb6-c0a505614956)
+[Please Click Here for the PDF](https://github.com/user-attachments/files/18052862/rfghjiko.1.pdf)
+
+
 A 7 min video demonstrating the proposed solution with narration
