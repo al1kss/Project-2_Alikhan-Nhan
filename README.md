@@ -281,10 +281,10 @@ axs[0].fill_between(
 This approach calculates lower and upper bounds for each sensor's measurements by subtracting or adding the standard deviation to each value in the `temp_values_dht` and `temp_values_bme` lists. The same technique can be applied to visualize deviations for humidity and pressure data.
 
 ![deviation graph](https://github.com/user-attachments/assets/4fb7906b-10fd-4ce6-9b13-7878fd4962a8)
-> *Deviation graph for 48 hours*
+> <sup>*Deviation graph for 48 hours*</sup>
 
 ![close_up_deviation](https://github.com/user-attachments/assets/e831e4e1-a8a9-4873-a633-78e0d2360557)
-> *Close-up deviation graph for 16 hours*
+> <sup>*Close-up deviation graph for 16 hours*</sup>
 
 
 # Criteria D: Functionality
