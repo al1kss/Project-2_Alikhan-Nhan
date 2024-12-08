@@ -49,29 +49,30 @@ hum_values_bme = get_values(hum_bme_id)
 hum_values_dht = get_values(hum_dht_id)
 pres_values = get_values(pres_id)
 
+deg = 70
 
 x_ = list(range(0,720))
-x, y = gen_polynomial_graph(x_, temp_values_bme[-720:],75)
+x, y = gen_polynomial_graph(x_, temp_values_bme[-720:],deg)
 
 fig, axs = plt.subplots(3, 1, figsize=(10, 9), sharex=True)
 
 # Temperature
-axs[0].plot(x, y, marker="o", linestyle="-", color="y",
-            label="BME Temp", linewidth=0.8, markersize=4)
+axs[0].plot(x, y, marker="o", linestyle="-", color="orange",
+            label=f"BME Temp, {deg} degree", linewidth=0.8, markersize=4)
 
-x, y = gen_polynomial_graph(x_, temp_values_dht[-720:],75)
+x, y = gen_polynomial_graph(x_, temp_values_dht[-720:],deg)
 axs[0].plot(x, y, marker="x", linestyle="-", color="b",
-            linewidth=0.8, markersize=4, label="DHT Temp")
+            linewidth=0.8, markersize=4, label=f"DHT Temp, {deg} degree")
 axs[0].set_title("Temperature Readings for the next 12 hours")
 axs[0].set_ylabel("Temperature (°C)")
 axs[0].legend()
 
 # Humidity
-x, y = gen_polynomial_graph(x_, hum_values_bme[-720:],75)
-axs[1].plot(x, y, marker="o", linestyle="-", color="y",
+x, y = gen_polynomial_graph(x_, hum_values_bme[-720:],deg)
+axs[1].plot(x, y, marker="o", linestyle="-", color="orange",
             label="BME Humidity", linewidth=0.8, markersize=4)
 
-x, y = gen_polynomial_graph(x_, hum_values_dht[-720:],75)
+x, y = gen_polynomial_graph(x_, hum_values_dht[-720:],deg)
 
 axs[1].plot(x, y, marker="x", linestyle="-", color="b",
             linewidth=0.8, markersize=4, label="DHT Humidity")
@@ -80,7 +81,7 @@ axs[1].set_ylabel("Humidity (%)")
 axs[1].legend()
 
 # Pressure
-x, y = gen_polynomial_graph(x_, pres_values[-720:],75)
+x, y = gen_polynomial_graph(x_, pres_values[-720:],deg)
 axs[2].plot(x, y, marker="o", linestyle="-", color="purple",
             label="BME Pressure", linewidth=0.8, markersize=4)
 axs[2].set_title("Pressure Readings for the next 12 hours")
