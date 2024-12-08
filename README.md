@@ -64,6 +64,14 @@ Cultural and contextual factors greatly influence our interpretation of sensor d
 ![image](https://github.com/user-attachments/assets/6bf09302-87ef-4376-860f-21444b7c3b35)
 **Fig.2** Fig. 2 Flow Chart for the update_all_sensors() function, this function uploads sensor data to both the server and the local CSV file.
 
+![CompScience FlowDiagrams - Page 1 (1)](https://github.com/user-attachments/assets/766320c2-015d-4ce9-bc76-b26a7d86cbcd)
+**Fig.3** Fig. 3 Flow Chart for the prediction.py, this code makes the prediction of the temperature, humidity, and pressure for the 12 hours based on the analysis of the 48-hour data. 
+
+![CompScience FlowDiagrams - Page 1](https://github.com/user-attachments/assets/ab04dbe6-d416-46f5-b406-15791124001b)
+**Fig.4** Fig. 4 Flow Chart for the ideal_temperature.py, this code shows the perfect temperature for basil's growth
+
+
+
 ## Record of Tasks
 | Task No |                              Planned Action                             |                                    Planned Outcome                                    | Time Estimated | Target Completion Date | Criterion |
 |:-------:|:-----------------------------------------------------------------------:|:-------------------------------------------------------------------------------------:|:--------------:|:----------------------:|:---------:|
@@ -248,7 +256,8 @@ Next, the temperature values from the BME sensor are plotted. Unlike the DHT sen
 The plot is customized with a title, a y-axis label, and a legend for clarity.
 The same approach is used for plotting humidity and pressure sensor data.
 
-![raw_max_min_med](https://github.com/user-attachments/assets/1a87e63a-6c02-4604-b355-adce1ba134be)
+![main_graph](https://github.com/user-attachments/assets/64f90b4c-6409-4517-8bff-595c8d643ea2)
+**Fig.5** Fig. 5 This graph shows the temperature, humidity, and pressure for the data gathered in 48-hours. It includes max, min, median, model values 
 
 ### For the mean graph
 
@@ -261,6 +270,7 @@ average_hum = [(hum_values_bme[i] + hum_values_dht[i]) / 2.0 for i in range(len(
 Once the averages are calculated, the data can be plotted using the `timestamps` list for the x-axis and `average_temp` for the y-axis.
 
 ![mean_max_min_med](https://github.com/user-attachments/assets/dee084eb-9e7d-4c55-926c-9b77d7c8afb1)
+**Fig.6** Fig. 6 This graph shows the temperature, and humidity for the data gathered in 48 hours. It includes max, min, median values
 
 #### For the graph with the deviation
 
@@ -294,17 +304,19 @@ axs[0].fill_between(
 This approach calculates lower and upper bounds for each sensor's measurements by subtracting or adding the standard deviation to each value in the `temp_values_dht` and `temp_values_bme` lists. The same technique can be applied to visualize deviations for humidity and pressure data.
 
 ![deviation graph](https://github.com/user-attachments/assets/4fb7906b-10fd-4ce6-9b13-7878fd4962a8)
-> <sup>*Deviation graph for 48 hours*</sup>
+**Fig.7** Fig. 7 This graph shows the temperature, humidity, and pressure deviation for the data gathered in 48 hours 
 
 ![close_up_deviation](https://github.com/user-attachments/assets/e831e4e1-a8a9-4873-a633-78e0d2360557)
-> <sup>*Close-up deviation graph for 16 hours*</sup>
+**Fig.8** Fig. 8 This graph shows the temperature, humidity, and pressure deviation for the data gathered in 16 hours 
 
 
 # Criteria D: Functionality
 
 ## Poster
 ![image](https://github.com/user-attachments/assets/d77c629a-8b87-43f2-9fb6-c0a505614956)
+**Fig. 9** Fig. 9, Science Poster
 [Please Click Here for the PDF](https://github.com/user-attachments/files/18052862/rfghjiko.1.pdf)
 
 
 A 7 min video demonstrating the proposed solution with narration
+[Google Drive](https://drive.google.com/file/d/1tdFpA20DA6DfpDmvaOMdtq095-vKVA07/view?usp=drive_link)
