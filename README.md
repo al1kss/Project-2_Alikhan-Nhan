@@ -319,4 +319,4 @@ This approach calculates lower and upper bounds for each sensor's measurements b
 
 
 A 7 min video demonstrating the proposed solution with narration
-[Google Drive](https://drive.google.com/file/d/1tdFpA20DA6DfpDmvaOMdtq095-vKVA07/view?usp=drive_link)
+[Google Drive](https://drive.google.com/drive/folders/15jsoM78kbg8LWp9bR0qrfyJYnjGiTti5?usp=sharing)
