@@ -227,7 +227,7 @@ In order not to confuse the client, a set of standard colors was used throughout
 
 ### For the Standard Graph
 
-The process begins by initializing the `subplot()` function, which allows multiple plots to be drawn within a single figure. In this case, the figure is configured with **3 rows** and **1 column**. The `sharex=True` argument ensures that the x-axis properties are shared across all subplots. When subplots share the x-axis within a column, only the bottom subplot displays the x-tick labels. This approach helps conserve space and improves the readability of the graphs. The variable `axs` represents an array of Axes objects, facilitating easy access to individual subplots [^8] (fix citation LATER).
+The process begins by initializing the `subplot()` function, which allows multiple plots to be drawn within a single figure. In this case, the figure is configured with **3 rows** and **1 column**. The `sharex=True` argument ensures that the x-axis properties are shared across all subplots. When subplots share the x-axis within a column, only the bottom subplot displays the x-tick labels. This approach helps conserve space and improves the readability of the graphs. The variable `axs` represents an array of Axes objects, facilitating easy access to individual subplots [^8].
 
 ```.py
 fig, axs = plt.subplots(3, 1, figsize=(10, 9), sharex=True)
