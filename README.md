@@ -46,7 +46,7 @@ TOK Connection: To what extent does the use of data science in climate research 
 
 1. Technology and Environmental Understanding
    
-The sensors allowed the research group to gather an enormous amount of data that would be extremely tedious to manually collect to great accuracy. A limitation is that sometimes errors can occur, and the only way to identify this error is to add a reference, such as an additional sensor. Even then, there is a chance that both sensors are incorrect, then it would be up to the human analysis to provide an accurate understanding from the data.
+The sensors allowed the research group to gather an enormous amount of data that would be extremely tedious to manually collect to great accuracy. A limitation is that sometimes errors can occur, and the only way to identify this error is to add a reference, such as an additional sensor. Even then, there is a chance that both sensors are incorrect, then it would be up to the human analysis to provide an accurate understanding from the data. A prime example of this is our DHT11 returning 138% humidity and only returning natural numbers instead of floats.
 
 3. Responsibilities in Handling Personal Data
    
