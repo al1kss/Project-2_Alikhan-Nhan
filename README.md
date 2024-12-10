@@ -105,24 +105,6 @@ Cultural and contextual factors greatly influence our interpretation of sensor d
 | Plot graphs with the data |                                   Run the code to plot the graphs                                    |                                                                        After running each file, the graph should be opened in another window. The graph should have the maximum and minimum values as well as a median. The variety of plots should be displayed presented with clear titles and labeled axis                                                                        |    1, 3, 4, 6    |
 |        Check Poster       |                           Check a poster, making sure all data is displayed                          |                                                                                                                                                     The poster is created with all the graph, citation, meeting success criteria                                                                                                                                                     |         7        |
 # Criteria C: Development
-## Existing Tools:
-| Software\ Development Tools |
-|-----------------------------|
-| Python                      |
-| PyCharm                     |
-| Raspberry Pi                |
-| ISAK Weather API            |
-
-| Libraries        |
-|------------------|
-| ADAfruit_SSD1306 |
-| ADAfruit_DHT     |
-| bme280           |
-| datetime         |
-| matplotlib       |
-| numpy            |
-| time             |
-| PIL              |
 
 ## List of techniques used
 1. Classes (Classes allow easy implementation of API requests for both new and existing users by creating different instances)
@@ -133,7 +115,7 @@ Cultural and contextual factors greatly influence our interpretation of sensor d
 6. HTTP Requests (To keep track of the sensor's data and add redundancy to ensure the swiftness of the data-recording process)
    
 # Development
-## Uploading Data to Server (Success Criteria 5)
+## Using a Class to Upload Data to Server (Success Criteria 5)
 ```.py
 # The 3 lines of code below is to check whether or not the user is new
 status = ''
@@ -153,14 +135,14 @@ if status == 'y':
     with open(f'database{j}', mode = 'a') as f: # add headers to the new csv file
         f.writelines(['temperature_bme, temperature_dht, humidity_bme, humidity_dht, pressure_bme, time\n'])
 
-    # create an instance of an object that we created that can send requests to ISAK Weather API
+    # create an instance of an object that we created that can send requests to the Weather API
     server = http(server_ip = '192.168.4.137', username = input("What is the username you want to choose?"), password = input("What is the password that you want to use?"), sensor_location = input("Where are the censors located at?"), i = j)
     server.register() # this method registers the user
 
     server.get_token() # this method retrieves an authorization token from the API server
     print(server.create_new_sensor_all_type()) # create new sensors using the username provided and token generated
 else:
-    # create an instance of an object that we created that can send requests to ISAK Weather API using the existing user's credential
+    # create an instance of an object that we created that can send requests to the Weather API using the existing user's credential
     server = http(server_ip = '192.168.4.137', username = input("What is your username?"), password = input("What is your password?"), i = input('What is your CSV file number?'))
 
 while True:
