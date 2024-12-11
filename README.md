@@ -265,10 +265,14 @@ To visualize the deviations, we modify the plot by adding shaded regions to repr
 
 ```.py
 axs[0].fill_between(
-    timestamps,
-    [val - temp_dev_dht for val in temp_values_dht],
-    [val + temp_dev_dht for val in temp_values_dht],
-    color="b", alpha=0.3, label="DHT Deviation"
+    timestamps, # X-axis values: list of timestamps for each temperature reading
+
+    # Lower boundary: subtract the deviation from each temperature value
+    [val - temp_dev_dht for val in temp_values_dht], # Creates a list of (temperature - deviation) values
+
+    # Upper boundary: add the deviation to each temperature value
+    [val + temp_dev_dht for val in temp_values_dht], # Creates a list of (temperature + deviation) values
+    color="b", alpha=0.3, label="DHT Deviation" # Transparency level of the fill (30% opacity), color blue
 )
 axs[0].fill_between(
     timestamps,
