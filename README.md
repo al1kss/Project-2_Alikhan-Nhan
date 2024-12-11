@@ -301,3 +301,7 @@ This approach calculates lower and upper bounds for each sensor's measurements b
 
 A 7 min video demonstrating the proposed solution with narration
 [Google Drive](https://drive.google.com/drive/folders/15jsoM78kbg8LWp9bR0qrfyJYnjGiTti5?usp=sharing)
+
+# Appendix A: Evidence of Client Consultation
+![image](https://github.com/user-attachments/assets/6a4fc5c4-e743-4ad1-a513-e2434b9d33a6)
+
