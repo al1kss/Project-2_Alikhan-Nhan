@@ -65,6 +65,7 @@ Cultural and contextual factors greatly influence our interpretation of sensor d
 **Fig.2** Fig. 2 Flow Chart for the update_all_sensors() function, this function uploads sensor data to both the server and the local CSV file.
 
 ![CompScience FlowDiagrams - Page 1 (1)](https://github.com/user-attachments/assets/766320c2-015d-4ce9-bc76-b26a7d86cbcd)
+
 **Fig.3** Fig. 3 Flow Chart for the prediction.py, this code makes the prediction of the temperature, humidity, and pressure for the 12 hours based on the analysis of the 48-hour data. 
 
 ![CompScience FlowDiagrams - Page 1](https://github.com/user-attachments/assets/ab04dbe6-d416-46f5-b406-15791124001b)
