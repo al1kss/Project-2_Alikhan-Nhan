@@ -149,13 +149,12 @@ while True:
 
     time.sleep(60) # stop the program for 60 seconds
 ```
-To fulfill criterion 5 and ensure that the data collection process goes as smoothly as possible, the code block above was needed. It describes the main code of our data collection code. It consists of an if statement that checks if the user is a new or returning and do exectutes the corresponding initial block of code. If the user is new, it creates a new CSV file to write the data, then it asks for a `username`, `password`, `sensor_location`, and use the CSV file number `j` as input to the instance variable `i` and creates an instance of the object `http`. `http` is an object we created to send various API requests to the ISAK weather API server.
-    
-Otherwise, if the user is not new, it will ask for a `username`, `password`, that user's sensor ID, and use CSV file number `j` as input to the instance variable `i` to create an instance of the class `http`.
-    
-Once the setup if statement finishes, a `while True:` loops repeats every 60 seconds (using the 'time' module). In one cycle, the code will use the `get_token()` method to get the authorization key, then the `update_all_sensors()`, which flow chart is described in section B, will use the key to upload the sensor recordings to the server and add it to the CSV. The while True loop here is justified because the loop continuing for more than 48 hours does not affect the results, and adding additional comparison into the while statement would take unecessary computation and more possible points of failure.
-    
-This code allows the swift resumption of recording if there is an error with the server or the sensors disconnecting, thereby allowing the recording process to take as less time as possible. Addtionally, it also adds redundancy to the data by both saving it locally in a CSV and the ISAK Weather API.
+The code above was used to fulfill criterion 5, saving the data recorded in a CSV and uploading it to a remote server using an API. The class `http` was used because it allowed for more readable code and code that is easier to debug. To upload the data, we needed to make multiple types of API calls to the server, and these API calls share information with each other, such as the username and password to the API, but some also retrieve information that will be used for other API calls, such as the API call that generates an authorization token which is then used by the API call that uploads the data to the server. Encapsulating these API calls into a class allowed for a way to share a set of data across these API call functions in a predictable manner, unlike using global variables, or sometimes function inputs. 
+
+Moreover, as our code has different API calls for new user and old users, such as the new user needing to create a new sensor on the server using the `create_new_sensor_all_type()` method but also API calls that are shared between the two types of users, such as getting the token from the server. Therefore, using a unified `http` class that allows for different instance variables allows us to maximize the usability of code while allowing the implementation to be as easy as possible, meaning that we do not have to write these API calls as independent functions and correctly modify function inputs every time that we need to modify the code.
+
+In essence, this technique, object oriented programming, allowed us to minimize the time that we take to program and record data, as the code has predictable behaviour and is clearer to debug, as we only have to worry about the process within the API calls functions themselves, rather than the variables inputted into these calls.
+
     
 ## Polynomial Prediction Generator (Success Criterion 3 & 6)
 ```.py
