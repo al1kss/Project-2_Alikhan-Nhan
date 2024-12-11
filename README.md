@@ -303,5 +303,15 @@ A 7 min video demonstrating the proposed solution with narration
 [Google Drive](https://drive.google.com/drive/folders/15jsoM78kbg8LWp9bR0qrfyJYnjGiTti5?usp=sharing)
 
 # Appendix A: Evidence of Client Consultation
-![image](https://github.com/user-attachments/assets/6a4fc5c4-e743-4ad1-a513-e2434b9d33a6)
+
+<img width="926" alt="image" src="https://github.com/user-attachments/assets/63cac082-3b9a-47bb-ace1-2b7bcc65e624">
+- The Client's Initial Problem Definition
+
+
+![image](https://github.com/user-attachments/assets/e09f04a7-a953-4a95-b3ee-070892b6f03b)
+- Us sending the success criteria to the client
+  
+<img width="887" alt="image" src="https://github.com/user-attachments/assets/3ab5c827-efc9-4892-87a4-9f4ff4ba304b">
+- The Client's Accepting the Solution and Success Criteria
+
 
