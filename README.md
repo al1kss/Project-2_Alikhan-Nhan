@@ -104,7 +104,7 @@ Cultural and contextual factors greatly influence our interpretation of sensor d
 # Criteria C: Development
 
 ## List of techniques used
-1. Classes (Classes allow easy implementation of API requests for both new and existing users by creating different instances)
+1. Object-Oriented Programming (OOP) (OOP allows for the creation of classes and instances, making it easier to manage API requests for both new and existing users by encapsulating related data and behaviors)
 2. Functions (Functions allow higher code-readability and allows for the reuse of code)
 3. Moving Average (To smooth the data and provides a more dataset more reflective of the environment)
 4. Polynomial Fit (To provide deeper understand of the data and allows for prediction based on the sensors' data)
