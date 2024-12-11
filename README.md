@@ -61,7 +61,7 @@ Cultural and contextual factors greatly influence our interpretation of sensor d
 **Fig.1** Fig. 1 System diagram (HL+) for the proposed system to visualize and analyze temperature and humidity data in our campus. Physical variables measured with a network of DHT11/BMP280 sensors locally on a Raspberry Pi. A remote server provides and API for remote monitoring and storage (192.162.6.142) via the ISAK-S network. A laptop for remote work is included.
 
 ## Flow Charts
-![image](https://github.com/user-attachments/assets/6bf09302-87ef-4376-860f-21444b7c3b35)
+![CompScience FlowDiagrams - Page 1 (2)](https://github.com/user-attachments/assets/45eba9f6-f9a7-4c86-9985-5d227e15d1ee)
 **Fig.2** Fig. 2 Flow Chart for the update_all_sensors() function, this function uploads sensor data to both the server and the local CSV file.
 
 ![CompScience FlowDiagrams - Page 1 (1)](https://github.com/user-attachments/assets/766320c2-015d-4ce9-bc76-b26a7d86cbcd)
